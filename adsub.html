@@ -1,0 +1,87 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Addition and Subtraction Practice</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .container {
+            text-align: center;
+            padding: 20px;
+            border-radius: 5px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            margin-top: 0;
+        }
+        input {
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 5px 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Addition and Subtraction Practice</h1>
+        <div id="question"></div>
+        <input type="text" id="answer" placeholder="Your answer">
+        <button onclick="checkAnswer()">Submit</button>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function getRandomNumber() {
+            return Math.floor(Math.random() * 100);
+        }
+
+        function generateQuestion() {
+            let num1 = getRandomNumber();
+            let num2 = getRandomNumber();
+            let operator = Math.random() < 0.5 ? '+' : '-'; // Randomly choose addition or subtraction
+            return `${num1} ${operator} ${num2}`;
+        }
+
+        function checkAnswer() {
+            let userInput = document.getElementById('answer').value;
+            let question = document.getElementById('question').innerText;
+            let answer = eval(question);
+
+            if (parseInt(userInput) === answer) {
+                document.getElementById('result').innerText = 'Correct!';
+            } else {
+                document.getElementById('result').innerText = `Incorrect. The correct answer is ${answer}.`;
+            }
+
+            document.getElementById('answer').value = '';
+            document.getElementById('question').innerText = generateQuestion();
+        }
+
+        document.getElementById('question').innerText = generateQuestion();
+    </script>
+</body>
+</html>
