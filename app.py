@@ -1,35 +1,3 @@
-# from flask import Flask, render_template, request
-# import random
-
-# app = Flask(__name__)
-
-# def generate_question():
-#     num1 = random.randint(0, 99)
-#     num2 = random.randint(0, 99)
-#     operator = random.choice(['+', '-'])
-#     return f"{num1} {operator} {num2}"
-
-# @app.route('/')
-# def index():
-#     question = generate_question()
-#     return render_template('index.html', question=question)
-
-# @app.route('/', methods=['POST'])
-# def check_answer():
-#     question = request.form['question']
-#     user_answer = request.form['answer']
-#     num1, operator, num2 = question.split()
-#     num1, num2 = int(num1), int(num2)
-#     correct_answer = num1 + num2 if operator == '+' else num1 - num2
-#     if int(user_answer) == correct_answer:
-#         result = 'Correct!'
-#     else:
-#         result = f'Incorrect. The correct answer is {correct_answer}.'
-#     return render_template('index.html', question=generate_question(), result=result)
-
-# if __name__ == '__main__':
-#     app.run(debug=True)
-
 
 
 
