@@ -38,5 +38,3 @@ def check_answer():
     return render_template('index.html', question=generate_question(), result=result, correct_count=app.config['CORRECT_COUNT'], incorrect_count=app.config['INCORRECT_COUNT'], total_count=app.config['TOTAL_COUNT'])
 
 
-if __name__ == '__main__':
-    app.run(debug=True)
