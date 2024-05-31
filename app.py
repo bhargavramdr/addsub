@@ -9,11 +9,13 @@ app.config['CORRECT_COUNT'] = 0
 app.config['INCORRECT_COUNT'] = 0
 app.config['TOTAL_COUNT'] = 0
 
+
 def generate_question():
     num1 = random.randint(0, 99)
     num2 = random.randint(0, 99)
     operator = random.choice(['+', '-'])
     return f"{num1} {operator} {num2}"
+
 
 @app.route('/')
 def index():
